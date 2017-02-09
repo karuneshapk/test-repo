@@ -1,0 +1,59 @@
+$icons-path: '../assets/icons'
+
+[class^="apl-icon"]
+  background-repeat: no-repeat
+  display: inline-block
+  min-width: 24px
+  background-position: center
+  &::after
+    content: "\2000"
+
+.apl-icon-eye-open
+  background-image: url(#{$icons-path}/eye-open.svg)
+
+.apl-icon-eye-hidden
+  background-image: url(#{$icons-path}/eye-hidden.svg)
+
+.apl-icon-close
+  background-image: url(#{$icons-path}/close.svg)
+
+// @SHAME I know it is not nice. But is it solution before font icon
+a, button
+  &:hover .apl-icon-close
+      background-image: url(#{$icons-path}/close-hover.svg)
+  &:active, &:focus
+    & .apl-icon-close
+      background-image: url(#{$icons-path}/close-focus-active.svg)
+
+.pending
+  background-image: url(#{$icons-path}/pending-radial.svg)
+  background-size: contain
+  background-position: center
+  background-repeat: no-repeat
+  height: 40px
+  width: 40px
+  display: block
+  box-sizing: border-box
+
+  &.full-width
+    margin: 10px
+    width: 100%
+
+  &.half-size
+    width: 20px
+    height: 20px
+    position: absolute
+
+  &.full-page
+    margin: 10px
+    width: 100%
+    position: absolute
+    top: 35%
+
+    & > svg
+      width: 120px
+      height: 60px
+
+  &.full-horizontal
+    margin: 10px
+    width: 100%

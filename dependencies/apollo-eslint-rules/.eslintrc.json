@@ -1,0 +1,121 @@
+{
+  "parser": "babel-eslint",
+  "extends": ["eslint:recommended"],
+  "plugins": [
+    "react"
+  ],
+  "env": {
+    "es6": true,
+    "browser": true,
+    "node": true,
+    "mocha": true
+  },
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true,
+      "modules": true
+    }
+  },
+  "settings": {
+    "react": {
+      "version": "0.14.0"
+    }
+  },
+  "rules": {
+    "quotes": [1, "single"],
+    "no-unused-expressions": 1,
+    "no-console": 1,
+    "no-debugger": 2,
+    "no-var": 0,
+    "new-cap": 0,
+    "space-infix-ops": 1,
+    "space-in-parens": [1, "never"],
+    "semi": 0,
+    "indent": [2, 2, {
+      "SwitchCase": 1
+    }],
+    "no-continue": 0,
+    "no-inline-comments": 0,
+    "no-lonely-if": 0,
+    "no-mixed-spaces-and-tabs": 2,
+    "no-spaced-func": 1,
+    "sort-vars": 0,
+    "no-trailing-spaces": 1,
+    "eol-last": 1,
+    "no-unused-vars": 1,
+    "no-underscore-dangle": 2,
+    "no-alert": 2,
+    "no-lone-blocks": 1,
+    "no-case-declarations": 0,
+    "prefer-const": 1,
+    "max-len": [1, 100],
+    "require-jsdoc": [1, {
+      "require": {
+        "FunctionDeclaration": true,
+        "MethodDefinition": true,
+        "ClassDeclaration": true
+      }
+    }],
+    "valid-jsdoc": [1, {
+      "requireReturn": false,
+      "requireParamDescription": false,
+      "requireReturnDescription": false,
+      "requireReturnType": false
+    }],
+    "jsx-quotes": [1, "prefer-double"],
+    "object-shorthand": [1, "always"],
+    "eqeqeq": [1, "smart"],
+    "react/jsx-boolean-value": 0,
+    "react/jsx-closing-bracket-location": [1, "line-aligned"],
+    "react/jsx-curly-spacing": [1, "never", { "allowMultiline": true }],
+    "react/jsx-indent-props": [1, 2],
+    "react/jsx-key": 2,
+    "react/jsx-max-props-per-line": [1, {"maximum": 2}],
+    "react/jsx-no-bind": 0,
+    "react/jsx-no-literals": 2,
+    "react/jsx-no-undef": 2,
+    "react/jsx-pascal-case": 1,
+    "react/jsx-sort-prop-types": 0,
+    "react/jsx-sort-props": 0,
+    "react/jsx-uses-vars": 2,
+    "react/jsx-no-duplicate-props": [1, { "ignoreCase": false }],
+    "react/jsx-wrap-multilines": 1,
+    "react/jsx-space-before-closing": [2, "always"],
+    "react/jsx-uses-react": 1,
+    "react/jsx-no-comment-textnodes": 1,
+    "react/no-danger": 1,
+    "react/no-did-mount-set-state": 1,
+    "react/no-did-update-set-state": 1,
+    "react/no-direct-mutation-state": 2,
+    "react/no-deprecated": 1,
+    "react/no-multi-comp": 1,
+    "react/no-set-state": 0,
+    "react/no-find-dom-node": 1,
+    "react/no-unknown-property": 2,
+    "react/prefer-es6-class": [2, "always"],
+    "react/require-render-return": 2,
+    "react/prop-types": [1, {
+      "ignore": [
+        "children",
+        "className",
+        "intl",
+        "rights"
+        ]
+      }
+    ],
+    "react/react-in-jsx-scope": 2,
+    "react/self-closing-comp": 1,
+    "react/no-is-mounted": 2,
+    "react/sort-comp": [1, {
+      "order": [
+        "constructor",
+        "static-methods",
+        "lifecycle",
+        "/^(on|handle).+$/",
+        "everything-else",
+        "/^render.+$/",
+        "render"
+      ]
+    }]
+  }
+}

@@ -1,0 +1,139 @@
+// overriding bootstrap mixins
+
+// in order to override bootstrap styles we put our own in body element
+// to make them more specific and thus have bigger priority when rendering
+body {
+
+  /* ------------------------------------ */
+  /* -------------- layout -------------- */
+  /* ------------------------------------ */
+
+  // override grid columns to facilitate inline-block instead of float
+  .float-grid-columns(@class) {
+    .col(@index) { // initial
+      @item: ~".col-@{class}-@{index}";
+      .col((@index + 1), @item);
+    }
+    .col(@index, @list) when (@index =< @grid-columns) { // general
+      @item: ~".col-@{class}-@{index}";
+      .col((@index + 1), ~"@{list}, @{item}");
+    }
+    .col(@index, @list) when (@index > @grid-columns) { // terminal
+      @{list} {
+        display: inline-block;
+        float: none;
+        vertical-align: top;
+      }
+    }
+    .col(1); // kickstart it
+  }
+  .make-grid(xs);
+  @media (min-width: @screen-sm-min) {
+    .make-grid(sm);
+  }
+  @media (min-width: @screen-md-min) {
+    .make-grid(md);
+  }
+  @media (min-width: @screen-lg-min) {
+    .make-grid(lg);
+  }
+  .make-grid(@class) {
+    .float-grid-columns(@class);
+  }
+
+
+
+  /* ------------------------------------ */
+  /* --------------- type --------------- */
+  /* ------------------------------------ */
+
+  .small {
+    .small-text;
+  }
+
+  p {
+    .margin-b-s;
+  }
+
+
+
+  /* ------------------------------------ */
+  /* ------ notifications, alerts ------- */
+  /* ------------------------------------ */
+
+  .help-block {
+    .margin-t-xs;
+    margin-bottom: 0;
+    color: @text-color-light;
+  }
+
+  .alert {
+    .margin-b-m;
+  }
+
+
+
+  /* ------------------------------------ */
+  /* --------------- form --------------- */
+  /* ------------------------------------ */
+
+  .form-group {
+    .margin-b-m;
+    &:last-child {
+      margin-bottom: 0;
+    }
+    &.margin-b-xs {
+      .margin-b-xs;
+    }
+    &.group {
+      .group;
+    }
+  }
+
+  .radio input[type="radio"], .radio-inline input[type="radio"], .checkbox input[type="checkbox"], .checkbox-inline input[type="checkbox"] {
+    position: static;
+    .margin-0;
+  }
+
+  label {
+    font-weight: @font-normal;
+    color: @text-color-light;
+    &.checkbox-label, &.radio-label {
+      color: @text-color;
+    }
+  }
+
+  .radio, .checkbox {
+    .margin-v-xs;
+    label {
+      .padding-l-m;
+      &.checkbox-label, &.radio-label {
+        .padding-l-s;
+        input[type="radio"], input[type="checkbox"] {
+          .margin-r-s;
+        }
+      }
+    }
+  }
+
+  .checkbox {
+    label {
+      .padding-l-s;
+    }
+  }
+
+  @media (min-width: @screen-sm-min) {
+    .modal-dialog:not(.footer-modal){
+      margin: 65px auto;
+    }
+  }
+
+  .modal-body {
+    overflow: hidden;
+    .padding-m;
+  }
+}
+
+.form-inline .form-group.has-error {
+  vertical-align: top;
+}

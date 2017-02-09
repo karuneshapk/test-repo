@@ -1,0 +1,9 @@
+.idea
+*.swp
+*.iml
+*~
+*.log
+*.po
+.DS_Store
+node_modules
+doc

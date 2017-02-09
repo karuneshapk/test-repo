@@ -1,0 +1,7 @@
+_old/*
+node_modules/*
+dist/*
+doc/*
+webpack/*
+build.config.js
+webpack.config.js

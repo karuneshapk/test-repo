@@ -1,0 +1,16 @@
+{
+  "presets": [
+    "react",
+    "es2015",
+    "stage-0",
+    "stage-1",
+    "stage-2",
+    "stage-3"
+  ],
+  "plugins": ["transform-undefined-to-void"],
+  "env": {
+    "production": {
+      "plugins": [["transform-react-remove-prop-types", { "mode": "wrap" }]]
+    }
+  }
+}

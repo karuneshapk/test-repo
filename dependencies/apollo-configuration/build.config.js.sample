@@ -1,0 +1,9 @@
+'use strict';
+
+module.exports = {
+  PORT: 8080,
+  PROXY_TARGET: '',
+  APP: 'APOLLO-CONFIGURATION',     // APOLLO_APP - name of app folder in dist
+  APP_TITLE: 'Apolo Config', // title of the application
+  APP_NAME: 'APOLLO-CONFIGURATION',   // name of the app
+}

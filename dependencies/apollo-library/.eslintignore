@@ -1,0 +1,5 @@
+node_modules/*
+build.config.js
+webpack.config.js
+karma.conf.js
+.git/*

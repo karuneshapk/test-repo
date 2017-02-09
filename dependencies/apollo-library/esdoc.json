@@ -1,0 +1,14 @@
+{
+  "source": "./src",
+  "destination": "./doc",
+  "autoPrivate": true,
+  "includes": ["\\.jsx$"],
+  "excludes": ["fetch\\.js$"],
+  "package": "./package.json",
+  "coverage": true,
+  "includeSource": true,
+  "lint": true,
+  "plugins": [
+    {"name": "esdoc-es7-plugin"}
+  ]
+}

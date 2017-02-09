@@ -1,0 +1,180 @@
+@import "~bootstrap/less/bootstrap.less";
+@import "font-awesome/index.less";
+@import "mixins.less";
+@import "mixin-overrides.less";
+
+/////////////////////////
+//// MAIN STYLE FILE ////
+/////////////////////////
+
+*:focus {
+  outline: 0 !important;
+}
+
+h1 {.h1;}
+h2 {.h2;}
+h3 {.h3;}
+h4 {.h4;}
+
+/* *** Form *** */
+// TODO: remove this when moving apps to the new architecture
+form {
+  .form-group {
+    .form-group {
+      margin-bottom: 0;
+    }
+  }
+}
+
+
+
+
+/* *** Password with peeking *** */
+// TODO: refactor this to use our mixins and variables
+// and possibly create mixins for it, so we don't have to add ad-hoc CSS like this
+.input__password {
+  .form-group {
+    .input-group {
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      input{
+        border: none;
+      }
+    }
+    .input-group-addon {
+      background: #eee;
+      box-shadow: inset 0 0 0 3px #fff;
+      border: none;
+      cursor: pointer;
+      color: #555;
+      border-radius: 5px;
+      padding: 0 15px;
+      box-shadow: inset 0 0 0 3px #fff, inset 0 0 0 4px #e6e6e5;
+    }
+    &.has-error {
+      .input-group {
+        border-color: #a94442;
+      }
+      .input-group-addon {
+        background: #f2dede;
+        color: #a94442;
+        box-shadow: inset 0 0 0 3px #fff, inset 0 0 0 4px #ebccd1;
+      }
+    }
+  }
+}
+
+.has-error {
+  .input__password .form-group {
+    .input-group {
+      border-color: #a94442;
+    }
+    .input-group-addon {
+      background: #f2dede;
+      color: #a94442;
+      box-shadow: inset 0 0 0 3px #fff, inset 0 0 0 4px #ebccd1;
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* *** Cancell mandate - START *** */
+// TODO: remove this when moving CO to the new architecture
+.modal {
+  .modal-backdrop.in {
+    background-color: @background-color;
+  }
+}
+
+.footer-modal {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  margin: 0;
+  .modal-content {
+    border-radius: 0;
+  }
+}
+
+@media (min-width: 768px) {
+  .modal-dialog:not(.footer-modal) {
+    margin: 60px auto;
+  }
+}
+
+.mandate-form-error {
+  background: white;
+}
+
+
+/* *** Tab component *** */
+.tab-component {
+  .tab-component-header {
+    border-bottom: 1px solid lightgrey;
+    .tab-header {
+      display: inline-block;
+      text-align: center;
+      vertical-align: middle;
+      padding: 15px;
+      color: #1888cf;
+      cursor: pointer;
+      margin-top: 1px;
+      margin-bottom: -1px;
+      border-radius: 4px 4px 0 0;
+      border: 1px solid transparent;
+      &.active, &.active:hover, &.active:focus {
+        color: #333333;
+        border: 1px solid lightgrey;
+        cursor: default;
+        background-color: #fff;
+        border-bottom-color: transparent;
+      }
+      &:hover, &:focus {
+        background-color: lightgrey;
+      }
+    }
+  }
+  .tab-component-body {
+    padding-top: 5px;
+    .tab-body {
+      display: none;
+      &.active {
+        display: block;
+      }
+    }
+  }
+}
+
+/* *** Date component *** */
+// Reset date padding for IE 10+
+@{ie-designator} .date-input-group .form-control {
+  padding: 0px;
+  text-align: center;
+}
+
+.breadcrumb {
+  background-color: transparent;
+  padding: 0;
+}
+
+/* Breadcrumb component */
+.breadcrumb > li + li:before {
+  color: #ccc;
+  content: ">>";
+  padding: 0 5px;
+}
+
+.breadcrumb > li.active {
+  color: #000;
+}
