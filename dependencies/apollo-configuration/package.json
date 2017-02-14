@@ -82,7 +82,7 @@
   "devDependencies": {
     "babel-eslint": "^7.1.1",
     "eslint": "^3.10.2",
-    "eslint-config-apollo": "file:./dependencies/apollo-configuration",
+    "eslint-config-apollo": "file:../apollo-eslint-rules",
     "eslint-plugin-react": "^6.7.1",
     "estraverse": "^4.2.0",
     "estraverse-fb": "^1.3.1",
