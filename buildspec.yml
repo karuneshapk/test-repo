@@ -15,7 +15,7 @@ phases:
       - aws s3 cp ./build s3://cfmt-frontend --recursive --acl public-read
       - echo Frontend uploaded successfully
       - echo Invalidate cloudfront distribution
-      - aws configure set preview.cloudfront true && aws cloudfront create-invalidation --distribution-id E1APOTSYKRJKB --paths /*
+      - aws configure set preview.cloudfront true && aws cloudfront create-invalidation --distribution-id E1APOTSYKRJKB --paths /
       - echo Invalidation successfully requested
 artifacts:
   files:
