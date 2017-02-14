@@ -9,3 +9,6 @@ phases:
   post_build:
     commands:
       - aws s3 rm s3://cfmt-build-artifacts --recursive
+artifacts:
+  files:
+    - build/**/*
