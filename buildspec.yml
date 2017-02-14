@@ -11,6 +11,10 @@ phases:
       - echo Cleanup front-end container
       - aws s3 rm s3://cfmt-frontend --recursive
       - echo Cleanup successful
+      - echo Upload front-end
+      - aws s3 cp $CODEBUILD_SRC_DIR s3://cfmt-frontend --recursive
+      - echo Frontend uploaded successfully
+
 artifacts:
   files:
     - build/**/*
