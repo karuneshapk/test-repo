@@ -6,9 +6,11 @@ phases:
   build:
     commands:
       - npm run build
-  post_build:
-    commands:
-      - aws s3 rm s3://cfmt-build-artifacts --recursive
+    post_build:
+  commands:
+      - echo Cleanup front-end container
+      - aws s3 rm s3://cfmt-frontend --recursive
 artifacts:
   files:
     - build/**/*
+  discard-paths: yes
