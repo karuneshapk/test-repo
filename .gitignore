@@ -10,3 +10,4 @@ build
 .env
 WebstormProjects
 .source-messages
+.project
